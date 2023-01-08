@@ -87,6 +87,7 @@ class _AddCarsScreenState extends State<AddCarsScreen> {
               SizedBox(
                 height: screenSize.height * 0.2,
               ),
+              // button to add new cars
               ElevatedButton(
                   onPressed: () {
                     _carsBloc.add(AddNewCars(

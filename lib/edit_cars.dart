@@ -97,6 +97,7 @@ class _EditCarsScreenState extends State<EditCarsScreen> {
               SizedBox(
                 height: screenSize.height * 0.15,
               ),
+              // button to update cars details
               ElevatedButton(
                   onPressed: () {
                     _carsBloc.add(EditCars(
@@ -113,6 +114,7 @@ class _EditCarsScreenState extends State<EditCarsScreen> {
               SizedBox(
                 height: screenSize.height * 0.015,
               ),
+              // button to delete cars
               ElevatedButton(
                   onPressed: () {
                     _carsBloc.add(DeleteCars(

@@ -20,6 +20,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
       {
         try {
+          // here is the validation of signup text fields
           if (event.email == '') {
             yield ErrorState(error: 'Please Enter You Email');
           }
@@ -33,6 +34,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           else if (event.password == '') {
             yield ErrorState(error: 'Please Enter You Password');
           } else {
+
             yield SignUpSuccess(
                 message: 'Successfully Sign Up',
                 email: event.email,

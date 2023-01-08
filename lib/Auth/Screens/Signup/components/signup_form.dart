@@ -29,6 +29,7 @@ class _SignUpFormState extends State<SignUpForm> {
   late SignUpBloc _signUpBloc;
 
   saveSignUp(String email, String password) async {
+    // here we store email and password of sign up
     const storage = FlutterSecureStorage();
     await storage.write(key: 'email', value: email);
     await storage.write(key: 'password', value: password);

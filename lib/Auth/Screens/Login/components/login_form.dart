@@ -43,7 +43,7 @@ class _LoginFormState extends State<LoginForm> {
         ToastClass().toastFunction(Colors.green, state.message);
 
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomePage()));
+            context, MaterialPageRoute(builder: (context) => const HomePage()));
       }
     }, builder: (context, state) {
       return ModalProgressHUD(

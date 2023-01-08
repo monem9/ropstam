@@ -21,12 +21,17 @@ class MyApp extends StatelessWidget {
     // BlocProvider extends InheritedWidget.
     return MultiProvider(
         providers: [
+          // initialize cars bloc
           BlocProvider<CarsBloc>(
             create: (context) => CarsBloc(),
           ),
+          // initialize cars login
+
           BlocProvider<LogInBloc>(
             create: (context) => LogInBloc(),
           ),
+          // initialize cars signup
+
           BlocProvider<SignUpBloc>(
             create: (context) => SignUpBloc(),
           ),

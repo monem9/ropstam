@@ -26,6 +26,7 @@ class CarsBloc extends Bloc<CarsEvent, CarsState> {
       yield CarsLoading();
       yield* _reloadCars();
     } else if (event is AddNewCars) {
+      // here is validation of add new cars
       if (event.name == '') {
         ToastClass().toastFunction(Colors.red, "Please Enter Car's Name");
       } else if (event.model == '') {
@@ -50,19 +51,28 @@ class CarsBloc extends Bloc<CarsEvent, CarsState> {
         ToastClass().toastFunction(Colors.green, "Car Successfully Added");
         // ignore: use_build_context_synchronously
         Navigator.push(
-            event.context, MaterialPageRoute(builder: (context) => HomePage()));
+            event.context, MaterialPageRoute(builder: (context) => const HomePage()));
       }
       yield* _reloadCars();
-    } else if (event is DeleteCars) {
+    }
+
+
+
+    else if (event is DeleteCars) {
       // here car is deleted from the list
       await _carsDao.delete(event.cars);
       ToastClass().toastFunction(Colors.green, "Car Successfully Deleted");
       // ignore: use_build_context_synchronously
       Navigator.push(
-          event.context, MaterialPageRoute(builder: (context) => HomePage()));
-
+          event.context, MaterialPageRoute(builder: (context) => const HomePage()));
       yield* _reloadCars();
-    } else if (event is EditCars) {
+    }
+
+
+
+    else if (event is EditCars) {
+      // here is validation of update  cars
+
       if (event.name == '') {
         ToastClass().toastFunction(Colors.red, "Please Enter Car's Name");
       } else if (event.model == '') {

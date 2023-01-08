@@ -18,6 +18,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
   Stream<LogInState> mapEventToState(
     LogInEvent event,
   ) async* {
+    // here we call the email and password which are stored in mobile app store
     const storage = FlutterSecureStorage();
     var email = await storage.read(key: 'email');
     var password = await storage.read(key: 'password');
@@ -27,6 +28,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
 
       {
         try {
+          // here is validation of log in text fields
           if (event.email == '') {
             yield ErrorState(error: 'Please Enter You Email');
           }

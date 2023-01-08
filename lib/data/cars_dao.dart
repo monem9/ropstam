@@ -16,7 +16,7 @@ class CarsDao {
   Future insert(Cars cars) async {
     await _carsStore.add(await _db, cars.toMap());
   }
-
+// function of updating cars
   Future update(Cars cars) async {
     final finder = Finder(filter: Filter.byKey(cars.id));
     await _carsStore.update(
@@ -25,7 +25,7 @@ class CarsDao {
       finder: finder,
     );
   }
-
+// function of deleting cars
   Future delete(Cars cars) async {
     final finder = Finder(filter: Filter.byKey(cars.id));
     await _carsStore.delete(
